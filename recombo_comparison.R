@@ -61,13 +61,13 @@ df <- data.frame(genotype = c(rep(geno1Name, dim(geno1)[1]),
                  RF = c(geno1$RF...,
                         geno2$RF...))
 
-## Have a look at df
-print(df)
-
 ## Order the levels of df$genotype (geno1Name followed by geno2Name)
 ## so that geno1Name is plotted before geno2Name
 df$genotype <- factor(df$genotype,
                       levels = c(geno1Name, geno2Name))
+
+## Have a look at df
+print(df)
 
 ## Compare RF values using Mann-Whitney U tests
 # Here lapply() iterates over each unique interval name in df
